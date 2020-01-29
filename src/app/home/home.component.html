@@ -1,0 +1,27 @@
+<div class="container">
+<label class="label label-success hide"></label>
+<h3>Backend User List</h3>
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+	<th>Name</th>
+	<th>Email</th>
+	<th>Job title</th>
+	<th>City</th>
+	<th>Country</th>
+	<th>action</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let val of alldata" class="userrow{{val?.id}}">
+	<th>{{val?.first_name}} {{val?.last_name}} </th>
+	<th>{{val?.email}}</th>
+	<th>{{val?.job_title}}</th>
+	<th>{{val?.city}}</th>
+	<th>{{val?.country}}</th>
+	<th><button class="btn btn-danger" (click)="deleteuser(val?.id)">Delete</button></th>
+</tr>
+</tbody>
+</table>
+<a href="/#/" class="btn btn-primary">back</a>
+</div>
